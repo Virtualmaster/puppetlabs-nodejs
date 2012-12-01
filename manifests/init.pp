@@ -11,7 +11,12 @@
 class nodejs(
   $dev_package = false,
   $proxy       = ''
+
+ notify { "place1" : }
+
 ) inherits nodejs::params {
+
+notify { "place2" :}
 
   case $::operatingsystem {
     'Debian': {
@@ -30,6 +35,8 @@ class nodejs(
 
     'Ubuntu': {
       include 'apt'
+
+notify { "place3": }
 
       # Only use PPA when necessary.
       # if $::lsbdistcodename != 'Precise'{
