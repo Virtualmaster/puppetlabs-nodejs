@@ -8,14 +8,10 @@
 #
 # Usage:
 #
-notify { "i am in da class": }
-
 class nodejs(
   $dev_package = false,
   $proxy       = ''
 ) inherits nodejs::params {
-
-notify { "place2" :}
 
   case $::operatingsystem {
     'Debian': {
@@ -34,8 +30,6 @@ notify { "place2" :}
 
     'Ubuntu': {
       include 'apt'
-
-notify { "place3": }
 
       # Only use PPA when necessary.
       # if $::lsbdistcodename != 'Precise'{
