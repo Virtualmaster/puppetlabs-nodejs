@@ -8,12 +8,11 @@
 #
 # Usage:
 #
+notify { "i am in da class": }
+
 class nodejs(
   $dev_package = false,
   $proxy       = ''
-
- notify { "place1" : }
-
 ) inherits nodejs::params {
 
 notify { "place2" :}
