@@ -62,11 +62,11 @@ class nodejs(
     require => Anchor['nodejs::repo']
   }
 
-  package { 'npm':
-    name    => $nodejs::params::npm_pkg,
-    ensure  => present,
-    require => Anchor['nodejs::repo']
-  }
+  #package { 'npm':
+  #  name    => $nodejs::params::npm_pkg,
+  #  ensure  => present,
+  #  require => Anchor['nodejs::repo']
+  #}
 
   if $proxy {
     exec { 'npm_proxy':
